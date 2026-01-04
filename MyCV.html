@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Trần Hiếu Nghĩa</title>
+    <style>
+        :root {
+            --main-teal: #2F8F83;
+            --dark-teal: #1D5B53;
+            --accent-orange: #F25C24;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-gray: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #e9e9e9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .left-column {
+            width: 32%;
+            background-color: var(--dark-teal);
+            color: #fff;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-column::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 40px;
+            border: 5px solid #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .left-section {
+            margin-bottom: 30px;
+        }
+
+        .left-title {
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .left-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .left-content li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .left-content i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .left-content a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        .skill-name {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .skill-dots span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .skill-dots span.active {
+            background-color: var(--accent-orange);
+        }
+
+        .right-column {
+            width: 68%;
+            padding: 40px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .header-name {
+            text-transform: uppercase;
+            font-size: 36px;
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+        .header-position {
+            text-align: center;
+            background-color: var(--bg-gray);
+            padding: 5px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            color: var(--text-light);
+            font-weight: 500;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 40px;
+        }
+
+        .right-section {
+            margin-bottom: 35px;
+        }
+
+        .right-title {
+            background-color: var(--main-teal);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+            min-width: 200px;
+        }
+
+        .info-block {
+            margin-bottom: 20px;
+            border-left: 3px solid var(--main-teal);
+            padding-left: 20px;
+        }
+
+        .info-block h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .info-block h3 a {
+            font-size: 0.7em;
+            color: var(--main-teal);
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .info-sub {
+            font-weight: bold;
+            color: var(--main-teal);
+            margin-bottom: 5px;
+        }
+        
+        .info-sub a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .info-sub a:hover {
+            text-decoration: underline;
+        }
+
+        .info-date {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .info-desc ul {
+            margin: 5px 0 0 20px;
+            padding: 0;
+        }
+        .info-desc li {
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <aside class="left-column">
+            <div class="profile-img-container">
+                <img src="images.jpg" alt="Sinh vien PTIT lien ket rikkeisoft" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+            </div>
+
+            <div class="left-section">
+                <h2 class="left-title">LIÊN HỆ</h2>
+                <div class="left-content">
+                    <ul>
+                        <li><i class="fa-solid fa-cake-candles"></i> 30/04/2007</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Bình Định</li>
+                        <li><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/tran.hieu.nghia.208343/">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="left-section">
+                <h2 class="left-title">KỸ NĂNG</h2>
+                <div class="left-content">
+                    <div class="skill-item">
+                        <span class="skill-name">Làm việc nhóm</span>
+                        <div class="skill-dots">
+                            <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Kỹ năng lãnh đạo</span>
+                        <div class="skill-dots">
+                            <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Xử lí vấn đề</span>
+                        <div class="skill-dots">
+                            <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Ứng biến</span>
+                        <div class="skill-dots">
+                            <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="right-column">
+            <header>
+                <h1 class="header-name">TRẦN HIẾU NGHĨA</h1>
+                <div class="header-position">Future Software Engineer Full Stack</div>
+            </header>
+
+            <section class="right-section">
+                <h2 class="right-title">MỤC TIÊU NGHỀ NGHIỆP</h2>
+                <p>Trở thành một Software engineer full stack làm việc tại Microsoft.</p>
+            </section>
+            
+            <section class="right-section">
+                <h2 class="right-title">DỰ ÁN TIÊU BIỂU</h2>
+                
+                <div class="info-block">
+                    <h3>Personal Project 1: AI Chatbot <a href="https://github.com/MNzVN/projects/blob/main/ai_chatbot_web.rar">GitHub 🔗</a></h3>
+                    <div class="info-desc">
+                        <p>Xây dựng Chatbot cá nhân dựa trên OpenAI API, tương tự ChatGPT/Gemini.</p>
+                        <ul>
+                            <li>Tối ưu hóa khả năng phản hồi câu hỏi cực kỳ nhanh chóng.</li>
+                            <li>Tùy biến chức năng theo ý định cá nhân người dùng.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>Personal Project 2: Game Gen AI <a href="https://github.com/Darksad91/WEB-t-o-game-Project-Nh-m-">GitHub 🔗</a></h3>
+                    <div class="info-desc">
+                        <p>Hệ thống tạo game từ câu lệnh (Prompt-to-Game) - Dự án Nhóm.</p>
+                        <ul>
+                            <li><strong>RealTime Review:</strong> Xem code và chơi game vừa tạo ngay lập tức.</li>
+                            <li><strong>Thư viện:</strong> Tính năng lưu trữ và chia sẻ game công khai.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-section">
+                <h2 class="right-title">KINH NGHIỆM LÀM VIỆC</h2>
+                <div class="info-block">
+                    <h3>Thực tập sinh</h3>
+                    <div class="info-sub"><a href="https://rikkeisoft.com/" target="_blank">Công ty Rikkeisoft</a></div>
+                    <span class="info-date">Thời gian: 3 năm</span>
+                    <div class="info-desc">
+                        <ul>
+                            <li>Lập trình hơn 100 servers.</li>
+                            <li>Thiết kế hơn 50 trang web.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-section">
+                <h2 class="right-title">HOẠT ĐỘNG</h2>
+                <div class="info-block">
+                    <h3>Cuộc thi lập trình TOPCV</h3>
+                    <div class="info-sub">Thành tích: Giải Nhất</div>
+                    <div class="info-desc">
+                        <p>Tham gia lập trình cùng team Rikkeisoft.</p>
+                    </div>
+                </div>
+                 <div class="info-block">
+                    <h3>Tham gia lập trình cùng F shop</h3>
+                    <span class="info-date">30/09/2025 - 30/12/2025</span>
+                </div>
+            </section>
+
+            <section class="right-section">
+                <h2 class="right-title">HỌC VẤN</h2>
+                <div class="info-block">
+                    <h3>Học viện công nghệ bưu chính viễn thông</h3>
+                    <div class="info-sub">Sinh viên</div>
+                    <span class="info-date">2025 - 2029</span>
+                </div>
+                <div class="info-block">
+                    <h3>Trường THPT Số 1 An Nhơn</h3>
+                    <div class="info-sub">Học Sinh</div>
+                    <span class="info-date">2021 - 2025</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
